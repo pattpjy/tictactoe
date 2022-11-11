@@ -7,8 +7,8 @@
 var Player = require('./player');
 class Game {
     constructor(){
-    this.player1 = new Player('1','🏌️‍♂️', 0 )
-    this.player2 = new Player('2','🏂', 0 )
+    this.player1 = new Player('P1','🏌️‍♂️', 0 )
+    this.player2 = new Player('P2','🏂', 0 )
     this.gameboard = { A1 : '', B1 : '', C1 : '',
                        A2 : '', B2 : '', C2 : '',
                        A3 : '', B3 : '', C3 : '',
@@ -18,34 +18,25 @@ class Game {
       ['A1','A2','A3'],['B1','B2','B3'], ['C1','C2','C3'],['A1','B1','C1'],['A2','B2','C2'], ['A3','B3','C3'],['A1','B2','C3'],['A3','B2','C1']
      ]
     }
-  // compare this.gameboard === this.winCondition, and key value pair has to be the same player
+  // heyPatt>>parameter play would be this.player1[id] later
   winCheck(play){
     for (var i = 0; i < 8; i++){
-      for( var j = 0; j < 3; j++){
-       if(this.gameboard[this.winConditon[i][j]]=== play){
-        return `${play} is a WINNER`
-       }
-        // console.log(this.winConditon[i][j],j)
-      // this.winConditon[i][j] === play
-      } 
+      if(this.gameboard[this.winConditon[i][0]] !== play || this.gameboard[this.winConditon[i][1]] !== play || this.gameboard[this.winConditon[i][2]] !== play){ 
+      }
+      return `${play} is a WINNER`
     }
   }
+  //need to add condition that stop player from adding the same position
   placement(lo,play) {
+    if(this.gameboard[lo]!== ''){
+    return 'CLICK SOMEWHERE ELSE'
+    }
      this.gameboard[lo] = play
   }
+  takeTurn(play){
+    this.playerTurn = play
+  }
 }
-
-
-
-var game = new Game()
-
-game.placement('A1','P1')
-game.placement('A2','P1')
-game.placement('A3','P1')
-
-game.winCheck('P1')
-
-
 
 //if player placement contain any of the win condition first, they win//
 //player cannot place token that already have placement
@@ -60,6 +51,5 @@ game.winCheck('P1')
 // annouce the winner
 
 //all the game function goes here
-
 
 module.exports = Game
