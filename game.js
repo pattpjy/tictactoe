@@ -6,7 +6,7 @@
 // A way to reset the Game’s board to begin a new game
 var Player = require('./player');
 class Game {
-  constructor(){
+    constructor(){
     this.player1 = new Player('1','🏌️‍♂️', 0 )
     this.player2 = new Player('2','🏂', 0 )
     this.gameboard = { A1 : '', B1 : '', C1 : '',
@@ -15,17 +15,18 @@ class Game {
                       }
     this.playerTurn = this.player1
     this.winConditon =  [
-      ['A1','A2','A3'],['B1','B2','B3'], ['C1','C2','C3']
-      ['A1','B1','C1'],['A2','B2','C2'], ['A3','B3','C3'],
-      ['A1','B2','C3'],['A3','B2','C1']
-    ]
-  }
-  // compare this.gameDataP1 === this.winCondition, compare 2 array if first array is match anything in the second array double for loop]
+      ['A1','A2','A3'],['B1','B2','B3'], ['C1','C2','C3'],['A1','B1','C1'],['A2','B2','C2'], ['A3','B3','C3'],['A1','B2','C3'],['A3','B2','C1']
+     ]
+    }
+  // compare this.gameboard === this.winCondition, and key value pair has to be the same player
   winCheck(play){
-  // this.gameData[0],this.gameData[2],this.gameData[3],
-    for (var i = 0; i < this.winConditon.length; i++){
-      for( var j = 0; j< this.winCondition[i].length; j++){
-      this.gameData[0] === this.winConditon[i][j]
+    for (var i = 0; i < 8; i++){
+      for( var j = 0; j < 3; j++){
+       if(this.gameboard[this.winConditon[i][j]]=== play){
+        return `${play} is a WINNER`
+       }
+        // console.log(this.winConditon[i][j],j)
+      // this.winConditon[i][j] === play
       } 
     }
   }
@@ -34,8 +35,17 @@ class Game {
   }
 }
 
-var game1 = new Game()
-game1.placement('A1','P2')
+
+
+var game = new Game()
+
+game.placement('A1','P1')
+game.placement('A2','P1')
+game.placement('A3','P1')
+
+game.winCheck('P1')
+
+
 
 //if player placement contain any of the win condition first, they win//
 //player cannot place token that already have placement
