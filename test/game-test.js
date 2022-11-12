@@ -44,25 +44,44 @@ describe('Game', function(){
     })
 
     it('should compare another game data to wincondition', function(){
-    var game1 = new Game()
-    var winnerCheck1 = game1.winCheck('P2')
+        var game1 = new Game()
+        var winnerCheck1 = game1.winCheck('P2')
 
-    game1.placement('A1','P1')
-    game1.placement('B2','P2')
-    game1.placement('B1','P1')
-    game1.placement('C2','P2')
-    game1.placement('C3','P1')
-    game1.placement('A2','P2')
-    assert.equal(winnerCheck1,'P2 is a WINNER')
-})
+        game1.placement('A1','P1')
+        game1.placement('B2','P2')
+        game1.placement('B1','P1')
+        game1.placement('C2','P2')
+        game1.placement('C3','P1')
+        game1.placement('A2','P2')
+        assert.equal(winnerCheck1,'P2 is a WINNER')
+    })
     it('should not let another player place token in the same position', function(){
-    var game2 = new Game()
-    game2.placement('A1','P1')
-    game2.placement('B2','P2')
-    game2.placement('B1','P1')
-    var check = game2.placement('B2','P2')
+        var game2 = new Game()
+        game2.placement('A1','P1')
+        game2.placement('B2','P2')
+        game2.placement('B1','P1')
+        var check = game2.placement('B2','P2')
+        assert.equal(check,'CLICK SOMEWHERE ELSE')
+    })
+    it('Should start the game wiht player 1', function(){
+        var game = new Game()
+        assert.equal(game.playerTurn.id, 'P1')
+    })
 
-    assert.equal(check,'CLICK SOMEWHERE ELSE')
+    it('Should switch player for every turn', function(){
+       var game = new Game()
+       game.placement('A1')
+       assert.equal(game.playerTurn.id, 'P2')
 
-})
+       game.placement('B2')
+       assert.equal(game.playerTurn.id, 'P1')
+
+       game.placement('C3')
+       assert.equal(game.playerTurn.id, 'P2')
+        
+
+
+    })
+
+
 })
