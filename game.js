@@ -31,30 +31,16 @@ class Game {
   }
 
   placement(lo) {
+    if (this.gameboard[lo]!== '') {
+      return 'CLICK SOMEWHERE ELSE'
+    }
+    this.turnCount += 1
+    this.gameboard[lo] = this.playerTurn.id
     if( this.playerTurn === this.player1) {
-      this.turnCount += 1
-      if (this.gameboard[lo]!== '') {
-        return 'CLICK SOMEWHERE ELSE'
-      }
-      this.gameboard[lo] = this.playerTurn.id
-      this.playerTurn = this.player2
+      this.playerTurn = this.player2  
     } else {
-      this.turnCount += 1
-      if (this.gameboard[lo]!== '') {
-        return 'CLICK SOMEWHERE ELSE'
-      }
-      this.gameboard[lo] = this.playerTurn.id
       this.playerTurn = this.player1
     }
-  }
-
-
-  //this.player1 is an odd, this.player2 is even number
-  takeTurn(){
-    if( this.turnCount %2 !== 0){
-      this.playerTurn = this.player1
-    }
-    this.playerTurn = this.player2
   }
 }
 

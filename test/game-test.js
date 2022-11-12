@@ -74,6 +74,7 @@ describe('Game', function(){
        assert.equal(game.playerTurn.id, 'P2')
 
        game.placement('B2')
+       
        assert.equal(game.playerTurn.id, 'P1')
 
        game.placement('C3')
