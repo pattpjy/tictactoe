@@ -47,9 +47,14 @@ class Game {
     }
     return "It's a draw"
   }
+  reset(){
+    this.gameboard = { A1 : '', B1 : '', C1 : '',
+                       A2 : '', B2 : '', C2 : '',
+                       A3 : '', B3 : '', C3 : '',
+                      }
+    this.turnCount = ''
+    this.playerTurn = this.player1
+  }
 }
-
-
-
 
 module.exports = Game
