@@ -65,20 +65,20 @@ describe('Game', function(){
     })
     it('Should start the game wiht player 1', function(){
         var game = new Game()
-        assert.equal(game.playerTurn.id, 'P1')
+        assert.equal(game.activePlayer.id, 'P1')
     })
 
     it('Should switch player for every turn', function(){
        var game = new Game()
        game.placement('A1')
-       assert.equal(game.playerTurn.id, 'P2')
+       assert.equal(game.activePlayer.id, 'P2')
 
        game.placement('B2')
        
-       assert.equal(game.playerTurn.id, 'P1')
+       assert.equal(game.activePlayer.id, 'P1')
 
        game.placement('C3')
-       assert.equal(game.playerTurn.id, 'P2')
+       assert.equal(game.activePlayer.id, 'P2')
     })
 
     it('Should annouce draw when no one win', function() {

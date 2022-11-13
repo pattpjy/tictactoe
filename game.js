@@ -14,32 +14,32 @@ class Game {
                        A3 : '', B3 : '', C3 : '',
                       }
     this.turnCount = ''
-    this.playerTurn = this.player1
+    this.activePlayer = this.player1
     this.winConditon =  [
       ['A1','A2','A3'],['B1','B2','B3'], ['C1','C2','C3'],['A1','B1','C1'],['A2','B2','C2'], ['A3','B3','C3'],['A1','B2','C3'],['A3','B2','C1']
      ]
     }
-  // heyPatt>>parameter play would be this.player1[id] later
-
-  winCheck(play){
+  
+// need to be this.current player instead of parameter play
+  winCheck(){
     for (var i = 0; i < 8; i++){
-      if(this.gameboard[this.winConditon[i][0]] !== play || this.gameboard[this.winConditon[i][1]] !== play || this.gameboard[this.winConditon[i][2]] !== play){ 
+      if(this.gameboard[this.winConditon[i][0]] !== this.activePlayer || this.gameboard[this.winConditon[i][1]] !== this.activePlayer || this.gameboard[this.winConditon[i][2]] !== this.activePlayer){ 
       }
-     
-      return `${play} is a WINNER`
+      return `${this.activePlayer.id} is a WINNER`
     }
   }
 
-  placement(lo) {
-    if (this.gameboard[lo]!== '') {
+  placement(location) {
+    if (this.gameboard[location]!== '') {
       return 'CLICK SOMEWHERE ELSE'
     }
     this.turnCount += 1
-    this.gameboard[lo] = this.playerTurn.id
-    if( this.playerTurn === this.player1) {
-      this.playerTurn = this.player2  
+    this.gameboard[location] = this.playerTurn.id
+    if( this.activePlayer === this.player1) {
+      this.activePlayer = this.player2  
     } else {
-      this.playerTurn = this.player1
+      winCheck() // this function return true or false
+      this.activePlayer = this.player1 // need to change to another swtich player function
     }
   }
   drawConditon(){
@@ -53,7 +53,7 @@ class Game {
                        A3 : '', B3 : '', C3 : '',
                       }
     this.turnCount = ''
-    this.playerTurn = this.player1
+    this.activePlayer = this.player1
   }
 }
 
