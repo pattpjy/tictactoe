@@ -25,7 +25,7 @@ class Game {
     for (var i = 0; i < 8; i++){
       if(this.gameboard[this.winConditon[i][0]] !== play || this.gameboard[this.winConditon[i][1]] !== play || this.gameboard[this.winConditon[i][2]] !== play){ 
       }
-      //need to update the wincount
+     
       return `${play} is a WINNER`
     }
   }
@@ -42,15 +42,14 @@ class Game {
       this.playerTurn = this.player1
     }
   }
+  drawConditon(){
+    if(this.turnCount !== 9){
+    }
+    return "It's a draw"
+  }
 }
 
-// drawConditon = [
-//    //If your opponent takes the middle square with an “X” or “O, ” the next move to ensure a tie is to place your letter in any of the corners. This way, there is no move that will allow them to win.
-//   ]
-//   [a2,b2,c3]
 
 
-//can i use odd and even to select player turn? how do i assign player to the game board??
-// is it a draw when placement invoked 9 time? 
 
 module.exports = Game

@@ -52,7 +52,7 @@ describe('Game', function(){
         game1.placement('B1','P1')
         game1.placement('C2','P2')
         game1.placement('C3','P1')
-        game1.placement('A2','P2')
+        game1.placement('A2','P2placement')
         assert.equal(winnerCheck1,'P2 is a WINNER')
     })
     it('should not let another player place token in the same position', function(){
@@ -79,9 +79,23 @@ describe('Game', function(){
 
        game.placement('C3')
        assert.equal(game.playerTurn.id, 'P2')
+    })
+
+    it('Should annouce draw when no one win', function() {
+        var game = new Game()
+        game.placement('C1','P1')
+        game.placement('A1','P2')
+        game.placement('B2','P1')
+        game.placement('A3','P2')
+        game.placement('A2','P1')
+        game.placement('C2','P2')
+        game.placement('B3','P1')
+        game.placement('B1','P2')
+        game.placement('C3','P1')
         
+        var status = game.drawConditon()
 
-
+        assert.equal(status, "It's a draw")
     })
 
 
