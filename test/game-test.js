@@ -30,13 +30,15 @@ describe('Game', function(){
     })
     it('should compare game data to wincondition', function(){
         var game = new Game()
-        var winnerCheck = game.winCheck('P1')
+       
 
         game.placement('A1','P1')
         game.placement('B2','P2')
         game.placement('B1','P1')
         game.placement('C2','P2')
         game.placement('C1','P1')
+        
+        var winnerCheck = game.winCheck('P1')
         
         assert.equal(game.winConditon[0][0],'A1')
         assert.equal(game.gameboard['A1'],'P1')
