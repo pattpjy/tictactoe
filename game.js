@@ -13,12 +13,14 @@ class Game {
                        A2 : '', B2 : '', C2 : '',
                        A3 : '', B3 : '', C3 : '',
                       }
+
     this.turnCount = 0
     this.activePlayer = this.player1
     this.winConditon =  [
       ['A1','A2','A3'],['B1','B2','B3'], ['C1','C2','C3'],['A1','B1','C1'],['A2','B2','C2'], ['A3','B3','C3'],['A1','B2','C3'],['A3','B2','C1']
      ]
     }
+
   // heyPatt>>parameter play would be this.player1[id] later
 
   isWon(){
@@ -27,12 +29,14 @@ class Game {
         this.activePlayer.increaseWins()
         return true 
       }
+  
     }
     return false
   }
 
   placement(location) {
     if (this.gameboard[location]!== '') {
+
       return false
     }
     this.turnCount += 1
@@ -61,8 +65,10 @@ class Game {
                        A2 : '', B2 : '', C2 : '',
                        A3 : '', B3 : '', C3 : '',
                       }
+
     this.turnCount = 0
     this.playerTurn = this.player1
+
   }
 }
 
