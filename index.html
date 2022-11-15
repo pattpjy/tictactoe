@@ -8,13 +8,38 @@
   <title>PS Tic Tac Toe</title>
 </head>
 <body>
-    <header>Let's go</header>
+  <header>Let's go</header>
+  <div class="bodyBox">
     <div class="left">
+      <h1>Player 1</h1>
+      <h2 id="P1-Stat">0 WINS</h2>
     </div>
     <div class="board">   
+      <h1 class="announce"></h1>
+      <div class="TTTBoard">
+        <div class="column">
+          <button class="box" id="A1"></button>
+          <button class="box" id="A2"></button>
+          <button class="box" id="A3"></button>
+        </div>
+        <div class="column">
+          <button class="box" id="B1"></button>
+          <button class="box" id="B2"></button>
+          <button class="box" id="B3"></button>
+        </div>
+        <div class="column">
+          <button class="box" id="C1"></button>
+          <button class="box" id="C2"></button>
+          <button class="box" id="C3"></button>
+        </div>
+      </div>
+
     </div>
     <div class="right">
+      <h1>Player 2</h1>
+      <h2 id="P2-Stat">0 WINS</h2>
     </div>
+  </div>
 </body>
 <script src="player.js"></script>
 <script src="game.js"></script>
