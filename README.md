@@ -17,8 +17,7 @@ To install the app, open terminal, navigate to your desired directory (also know
 
 ### Context:
 
-This is my last project of Mod1 and it's a solo project. The business logics of the game live in Player and Game file and the user view and interation live in HTML CSS and Main file. 
-
+This is my last project of Mod1 and it's a solo project. The architect of the application followed the suggested architect. The business logics of the game live in Player.js and Game.js and the user view and interation live in HTML CSS and Main.js. In order to test the data model, I created unit test for the game.js and player.js and used browser dev tool for html and main.js for any debugging. 
 
 
 ### Contributors:
@@ -37,5 +36,5 @@ Use your problem solving process to break down large problems, solve things step
 
 Wins: Completed a working MVP with no bug!. 
 
-Challenges: Planning the game view and user intereaction were challending. I ended up writing additional condition to fix bug instead of writing the functions with more thoughful consideration. 
+Challenges: Planning the game view and user intereaction were challenging. I ended up writing additional condition to fix bug instead of writing the functions with more thoughful consideration. 
 
