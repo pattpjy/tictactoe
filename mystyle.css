@@ -53,11 +53,11 @@ h1, h2 {
 
 .box {
     display : block;
-    width   : auto;
-    height  : auto;
+    width   : 180px;
+    height  : 180px;
     border  : 3px solid #2c12ea;
     color       : #d6d92d;
-    font-size   : 5em;
+    font-size   : 2em;
     font-weight : 100;
     text-align  : center;
     padding     : 20px;
