@@ -1,4 +1,3 @@
-// const Game = require("./game")
 
 //Add variables/querySlector
 var a1Btn = document.querySelector('#A1')
@@ -73,8 +72,9 @@ function checkWin(){
 
 function boardReset(){
     newGame.reset()
-    announceTxt.innerHTML = ''
+    announceTxt.innerHTML = `It's ${newGame.activePlayer.token}'s turn`
     for( var i = 0; i < reset.length; i++){
         reset[i].innerHTML = ''
     } 
+
 }

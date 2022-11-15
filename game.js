@@ -1,4 +1,5 @@
-var Player = require('./player');
+
+// var Player = require('./player');
 class Game {
     constructor(){
     this.player1 = new Player('P1','🏌️', 0 )
@@ -61,4 +62,4 @@ class Game {
   }
 }
 
-module.exports = Game
+// module.exports = Game
