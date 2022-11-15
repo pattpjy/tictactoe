@@ -17,7 +17,7 @@ To install the app, open terminal, navigate to your desired directory (also know
 
 ### Context:
 
-This is my last project of Mod1 and it's a solo project. The architect of the application followed the suggested architect. The business logics of the game live in Player.js and Game.js and the user view and interation live in HTML CSS and Main.js. In order to test the data model, I created unit test for the game.js and player.js and used browser dev tool for html and main.js for any debugging. 
+This is my last project of Mod1 and it's a solo project. The architect of the application followed the suggested architect. The business logics of the game live in Player.js and Game.js and the user view and interation live in HTML CSS and Main.js. In order to test the data model, I created unit test for the game.js and player.js and used browser dev tool for html and main.js for any debugging. The project breakdown is in gitHub projects section. 
 
 
 ### Contributors:
