@@ -4,12 +4,15 @@ body {
     background-color: antiquewhite;
     font-family     : 'Open Sans', sans-serif;
 }
-h1, h2 {
+h1{
+    font-size: 60px;
+}
+h1, h2, h3{
     text-align: center;
 }
 
 .bodyBox {
-    background-color:burlywood;
+    background-color:#E0C1B3;
     border: solid 2px blackgit ;
     display: flex;
     justify-content: space-between;
@@ -18,7 +21,7 @@ h1, h2 {
 
 .left, .right {
     width: 400px;
-    background-color: hsl(24, 95%, 46%);
+    background-color: #D89A9E;
 }
 
 .board {
@@ -43,7 +46,7 @@ h1, h2 {
     /* width   : 520px;
     height  : 520px; */
     padding : 5px;
-    border  : 2px solid #e4e4e4;
+   
 }    
 .column {
     display         : flex;
@@ -55,8 +58,8 @@ h1, h2 {
     display : block;
     width   : 180px;
     height  : 180px;
-    border  : 3px solid #2c12ea;
-    color       : #d6d92d;
+    border  : 3px solid #846267;
+    color       : #C37D92;
     font-size   : 2em;
     font-weight : 100;
     text-align  : center;
