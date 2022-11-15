@@ -59,7 +59,7 @@ function updateScores (event) {
 
 function checkWin(){
     if(newGame.isWon()){
-        announceTxt.innerHTML = `${newGame.activePlayer.id} is a winner`
+        announceTxt.innerHTML = `${newGame.activePlayer.token} is a winner`
         updateScores()
         setTimeout(boardReset, 2000)
     } else if (newGame.isADraw()) {
